@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define ARRAY_SIZE 40000000
+#define ARRAY_SIZE 100000
 
 void merge_sort(int *array, int *tmp, int size);
 void merge_r(int *src, int *tmp, int start, int mid, int end);
@@ -23,12 +23,12 @@ int main() {
   for (i = 0; i < ARRAY_SIZE; i++) {
     src[i] = rand();
   }
-/*
+
 printf("before sorting\n");
 for (i = 0; i < ARRAY_SIZE; i++) {
     printf("%d \t",src[i]);	
   }
-printf("\n");*/
+printf("\n");
 
   // sort int type array
   start = clock();
@@ -36,12 +36,12 @@ printf("\n");*/
   end = clock();
   printf("Time taken: %f seconds\n", cpu_time_used);
 
-/*printf("after sorting\n");
+printf("after sorting\n");
 for (i = 0; i < ARRAY_SIZE; i++) {
     printf("%d \t",src[i]);
 	
   }
-printf("\n");*/
+printf("\n");
   for(i=1;i<ARRAY_SIZE&&(src[i-1]<=src[i]);i++);
   if(i==ARRAY_SIZE) { printf("Test passed");}
   else { printf("Test Failed");}
